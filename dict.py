@@ -4,9 +4,13 @@
 #wyswietl slownik albo dodaj nowy kontakt
 
 data = {}
-
+commands = ["new_contact","show_contacts"]
 while True:
-    command = input("Pick an option: new_contact, show_contacts")
+    command = input(f"Pick an option: {commands}")
+    while command not in commands:
+        print("Unknown command, try again")
+        command = input(f"Pick an option: {commands}")
+
     if command == "new_contact":
         full_name = input(f"Wprowadz imie i nazwisko: ")
         number = input(f"Wprowadz numer: ")
